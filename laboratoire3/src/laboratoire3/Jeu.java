@@ -7,13 +7,13 @@ public class Jeu {
 	private int valeurDeAleatoire;
 	
 	public Jeu() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public void roulerDe(CollectionJoueurs joueurs, CollectionDes des) {
 		for(int i = 0; i < joueurs.size(); i++) {
 			joueurCourant = i + 1;
-			System.out.print("Le joueur #" + joueurCourant + " roule ..." + "\n");
+			System.out.print("Le joueur #" + joueurCourant + " joue ..." + "\n");
 			for(int j = 0; j < des.size(); j++) {
 				deCourant = j + 1;
 				valeurDeAleatoire = (int) (Math.random() * De.nbFaces + 1);
