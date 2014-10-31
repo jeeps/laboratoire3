@@ -1,17 +1,29 @@
 package laboratoire3;
 
-public class Jeu {
+public abstract class Jeu {
 	public int nbTours = 6;
-	private static int joueurCourant;
-	private static int deCourant;
-	private int valeurDeAleatoire;
+	//abstract void initialisationJeu();
+    abstract void calculerScoreTour();
+    abstract boolean finJeu();
+    abstract void calculerLeVainceur();
 	
 	public Jeu() {
 		
 	}
+	
+	public final void jouer() {
+		System.out.print("as");
+        int j = 0;
+        while (!finJeu()) {
+        	calculerScoreTour();
+            j = (j + 1) % nbTours;
+        }
+        
+        calculerLeVainceur();
+    }
 
 	public void roulerDe(CollectionJoueurs joueurs, CollectionDes des) {
-		for(int i = 0; i < joueurs.size(); i++) {
+		/*for(int i = 0; i < joueurs.size(); i++) {
 			joueurCourant = i + 1;
 			System.out.print("Le joueur #" + joueurCourant + " joue ..." + "\n");
 			for(int j = 0; j < des.size(); j++) {
@@ -25,6 +37,6 @@ public class Jeu {
 					System.out.print("le dé #" + deCourant + " obtient " + valeurDeAleatoire + ", ");
 				}
 			}
-		}
+		}*/
 	}
 }
